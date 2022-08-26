@@ -31,3 +31,15 @@ function playRound(playerSelection, computerSelection) {
         return "It is a tie!"; 
     }
 }
+
+function game() {
+    console.log(playRound("ROCK", "Scissors"));
+    console.log(playRound("ROCK", "Scissors"));
+    console.log(playRound("Paper", "scissors"));
+    console.log(playRound("ScIsSorS", "Scissors")); 
+
+    console.log(playerWinCount);
+    console.log(computerWinCount);
+}
+
+game();
