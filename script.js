@@ -43,8 +43,13 @@ function game() {
         console.log(playRound(getPlayerChoice(), getComputerChoice()));
     }
 
-    console.log(playerWinCount);
-    console.log(computerWinCount);
+    if (playerWinCount > computerWinCount) {
+        console.log(`Player Wins! - Score: - ${playerWinCount} x ${computerWinCount}`);
+    } else if (computerWinCount > playerWinCount) {
+        console.log(`Computer Wins! - Score: - ${computerWinCount} x ${playerWinCount}`);
+    } else {
+        console.log(`It's a tie! - Score: - ${computerWinCount} x ${playerWinCount}`);
+    }
 }
 
 game();
