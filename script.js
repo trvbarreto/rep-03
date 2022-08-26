@@ -7,6 +7,11 @@ function getComputerChoice() {
     console.log(choices[random]);
 }
 
+function getPlayerChoice() {
+    let choice = prompt("Rock, Paper or Scissors?");
+    return choice;
+}
+
 let playerWinCount = 0;
 let computerWinCount = 0;
 
@@ -33,10 +38,6 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    console.log(playRound("ROCK", "Scissors"));
-    console.log(playRound("ROCK", "Scissors"));
-    console.log(playRound("Paper", "scissors"));
-    console.log(playRound("ScIsSorS", "Scissors")); 
 
     console.log(playerWinCount);
     console.log(computerWinCount);
