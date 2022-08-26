@@ -4,7 +4,7 @@ function getComputerChoice() {
 
     let random = Math.floor(Math.random() * 3);
 
-    console.log(choices[random]);
+    return choices[random];
 }
 
 function getPlayerChoice() {
@@ -38,6 +38,10 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
+
+    for (let i = 0; i < 5; i++) {
+        console.log(playRound(getPlayerChoice(), getComputerChoice()));
+    }
 
     console.log(playerWinCount);
     console.log(computerWinCount);
