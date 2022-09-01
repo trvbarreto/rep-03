@@ -14,8 +14,6 @@ function getPlayerChoice() {
 
 const results = document.querySelector('.results');
 
-'Teste'
-
 let playerPoints = 0;
 let computerPoints = 0;
 
