@@ -16,8 +16,8 @@ const results = document.querySelector('.results');
 
 'Teste'
 
-let playerWinCount = 0;
-let computerWinCount = 0;
+let playerPoints = 0;
+let computerPoints = 0;
 
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
 
@@ -25,34 +25,25 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
     computerSelection = computerSelection.toUpperCase();
 
     if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
-        results.textContent = "You Win! Rock beats Scissors"; 
+        results.textContent = "You Win! Rock beats Scissors";
+        playerPoints++;
     } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-        results.textContent = "You Lose. Paper beats Rock"; 
+        results.textContent = "You Lose. Paper beats Rock";
+        computerPoints++;
     } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
         results.textContent = "You Win! Paper beats Rock"; 
+        playerPoints++;
     } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
         results.textContent = "You Lose. Scissors beats Paper"; 
+        computerPoints++;
     } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
         results.textContent = "You Win! Scissors beats Paper";
+        playerPoints++;
     } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
         results.textContent = "You Lose. Rock beats Scissors"; 
+        computerPoints++;
     } else {
         results.textContent = "It is a tie!"; 
-    }
-}
-
-function game() {
-
-    for (let i = 0; i < 5; i++) {
-        console.log(playRound(getPlayerChoice(), getComputerChoice()));
-    }
-
-    if (playerWinCount > computerWinCount) {
-        console.log(`Player Wins! - Score: - ${playerWinCount} x ${computerWinCount}`);
-    } else if (computerWinCount > playerWinCount) {
-        console.log(`Computer Wins! - Score: - ${computerWinCount} x ${playerWinCount}`);
-    } else {
-        console.log(`It's a tie! - Score: - ${computerWinCount} x ${playerWinCount}`);
     }
 }
 
