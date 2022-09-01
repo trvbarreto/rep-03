@@ -12,6 +12,10 @@ function getPlayerChoice() {
     return choice;
 }
 
+const results = document.querySelector('.results');
+
+'Teste'
+
 let playerWinCount = 0;
 let computerWinCount = 0;
 
@@ -21,19 +25,19 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
     computerSelection = computerSelection.toUpperCase();
 
     if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
-        return playerWinCount++, "You Win! Rock beats Scissors"; 
+        results.textContent = "You Win! Rock beats Scissors"; 
     } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-        return computerWinCount++, "You Lose. Paper beats Rock"; 
+        results.textContent = "You Lose. Paper beats Rock"; 
     } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
-        return playerWinCount++, "You Win! Paper beats Rock"; 
+        results.textContent = "You Win! Paper beats Rock"; 
     } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
-        return computerWinCount++, "You Lose. Scissors beats Paper"; 
+        results.textContent = "You Lose. Scissors beats Paper"; 
     } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
-        return playerWinCount++, "You Win! Scissors beats Paper"; 
+        results.textContent = "You Win! Scissors beats Paper";
     } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
-        return computerWinCount++, "You Lose. Rock beats Scissors"; 
+        results.textContent = "You Lose. Rock beats Scissors"; 
     } else {
-        return "It is a tie!"; 
+        results.textContent = "It is a tie!"; 
     }
 }
 
@@ -55,5 +59,5 @@ function game() {
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach(button => {
-    button.addEventListener('click', () => console.log(playRound(button.value)));
-})
+    button.addEventListener('click', () => playRound(button.value));
+});
