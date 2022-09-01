@@ -15,7 +15,7 @@ function getPlayerChoice() {
 let playerWinCount = 0;
 let computerWinCount = 0;
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection = getComputerChoice()) {
 
     playerSelection = playerSelection.toUpperCase();
     computerSelection = computerSelection.toUpperCase();
@@ -52,4 +52,8 @@ function game() {
     }
 }
 
-game();
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => console.log(playRound(button.value)));
+})
